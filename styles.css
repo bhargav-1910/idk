@@ -1,0 +1,302 @@
+:root {
+  --pink: #ff4d9e;
+  --ink: #000;
+  --ink-soft: #0e0e0f;
+  --white: #fff;
+  --border-muted: #a8a8a8;
+  /* PP Gosha Sans is a commercial font; it is used if installed, otherwise Satoshi Black stands in. */
+  --font-display: "PP Gosha Sans", "Satoshi", system-ui, sans-serif;
+  --font-body: "Satoshi", system-ui, sans-serif;
+  --grad-pill: linear-gradient(107.12deg, rgb(242, 201, 255) 0.68%, rgb(253, 102, 171) 41.97%, rgb(255, 77, 158) 155.59%);
+  --grad-glow: linear-gradient(107.12deg, rgb(242, 201, 255) 0.68%, rgb(212, 81, 255) 41.97%, rgb(79, 16, 100) 155.59%);
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  background: #111;
+}
+
+body {
+  padding: 24px 16px;
+  font-family: var(--font-body);
+}
+
+.stage {
+  max-width: 600px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* Fixed 600×1200 collage canvas (scaled down by script on narrow screens) */
+.nl {
+  position: relative;
+  width: 600px;
+  height: 1200px;
+  background: #000;
+  overflow: hidden;
+  transform-origin: top left;
+}
+
+.nl img { display: block; max-width: none; pointer-events: none; }
+.nl h1, .nl h2, .nl p, .nl ul { margin: 0; padding: 0; }
+.pink { color: var(--pink); }
+
+/* ---------- Background ---------- */
+.bg {
+  position: absolute;
+  left: 0; top: 2px;
+  width: 600px; height: 1200px;
+}
+.bg__img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+
+.hero-people {
+  position: absolute;
+  left: 206px; top: 79px;
+  width: 490px;
+  aspect-ratio: 352 / 158;
+  overflow: hidden;
+}
+.hero-people img {
+  position: absolute;
+  left: 0; top: -15.93%;
+  width: 100%; height: 159.08%;
+}
+
+/* ---------- Decorative objects ---------- */
+.obj { position: absolute; overflow: hidden; }
+.obj img { position: absolute; }
+
+.obj--paper { left: 298px; top: 909px; width: 302px; height: 291px; }
+.obj--paper img { left: 0.33%; top: 0.28%; width: 99.67%; height: 99.72%; }
+
+.obj--star { left: -6px; top: 894px; width: 67px; height: 66px; }
+.obj--star img { left: 0.96%; top: 1.4%; width: 98.94%; height: 98.39%; }
+
+.obj--sparks { left: 535px; top: 853px; width: 42px; height: 33px; }
+.obj--sparks img { left: 1.57%; top: 0.5%; width: 96.63%; height: 98.39%; }
+
+.obj--95 { left: 111px; top: 756px; width: 159px; height: 78px; }
+.obj--95 img { left: 0; top: 0; width: 100%; height: 100%; }
+
+/* ---------- Logo ---------- */
+.logo { position: absolute; left: 23px; top: 10px; width: 112px; height: 48px; }
+.logo img { position: absolute; }
+.logo__mark { left: 0; top: 0; width: 54.328px; height: 48px; }
+.logo__fde { left: 55.164px; top: 21.09px; width: 28.418px; height: 10.182px; }
+.logo__academy { left: 54.328px; top: 33.454px; width: 57.672px; height: 11.636px; }
+
+/* ---------- Rotated text/image boxes ---------- */
+.rot {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.rot > * { flex: none; }
+
+.rot--headline { left: 42px; top: 108px; width: 293.724px; height: 150.834px; }
+.headline {
+  width: 287px;
+  transform: rotate(-3deg);
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 26px;
+  line-height: 34px;
+  color: var(--ink);
+}
+
+.rot--signals { left: 251px; top: 340px; width: 124.24px; height: 33.4px; }
+.signals-title {
+  width: 123px; height: 27px;
+  transform: rotate(-3deg);
+  font-weight: 700;
+  font-size: 20px;
+  line-height: normal;
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+
+/* Signal cards */
+.card-img { position: relative; overflow: hidden; }
+.card-img img { position: absolute; }
+
+.rot--card1 { left: 49px; top: 396px; width: 159.284px; height: 145.755px; }
+.card-img--ms { width: 150.19px; height: 135.609px; transform: rotate(-4deg); }
+.card-img--ms img { left: -29.28%; top: -18.05%; width: 173.36%; height: 128%; }
+
+.rot--card2 { left: 241px; top: 405px; width: 155.961px; height: 136.682px; }
+.card-img--google { width: 150.629px; height: 130.489px; transform: rotate(2.4deg); }
+.card-img--google img { left: -24.6%; top: -1.78%; width: 154.21%; height: 100.09%; }
+
+.rot--card3 { left: 431.16px; top: 404.74px; width: 143.767px; height: 116.581px; }
+.card-img--openai { width: 136.614px; height: 107.313px; transform: rotate(-4deg); }
+.card-img--openai img { left: -52.82%; top: -13.75%; width: 159.5%; height: 114.21%; }
+
+/* Torn-paper vectors under the cards */
+.vec { position: absolute; }
+.vec--58 { left: 435px; top: 465px; width: 140.5px; height: 75px; }
+.vec--58 img { width: 140.5px; height: 75px; }
+.vec--59 { left: 238.39px; top: 491.5px; width: 153.64px; height: 57.0642px; }
+.vec--59 img { width: 153.64px; height: 57.0642px; }
+
+/* Captions */
+.caption {
+  font-weight: 500;
+  font-size: 10px;
+  line-height: normal;
+  color: var(--ink);
+  text-align: center;
+}
+.rot--cap1 { left: 53px; top: 537px; width: 158.571px; height: 38.884px; }
+.caption--1 { width: 157px; transform: rotate(-4deg); }
+.rot--cap2 { left: 243px; top: 537px; width: 144.047px; height: 33.964px; }
+.caption--2 { width: 143px; transform: rotate(2.4deg); }
+.rot--cap3 { left: 440px; top: 518px; width: 134.629px; height: 37.209px; }
+.caption--3 { white-space: nowrap; transform: rotate(-4deg); }
+
+/* ---------- The Radar ---------- */
+.rot--radar { left: 109px; top: 670px; width: 113.84px; height: 35.7px; }
+.radar-title {
+  width: 112px; height: 26px;
+  transform: rotate(-5deg);
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 22px;
+  line-height: normal;
+  color: var(--pink);
+  white-space: nowrap;
+}
+
+.rot--radar-sub { left: 80px; top: 701px; width: 193.585px; height: 54.502px; }
+.radar-sub {
+  width: 191px;
+  transform: rotate(-5deg);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: normal;
+  text-transform: capitalize;
+  color: var(--ink);
+}
+
+.rot--radar-body { left: 102px; top: 840px; width: 211.4px; height: 46.2px; }
+.radar-body {
+  width: 209.75px; height: 28px;
+  transform: rotate(-5deg);
+  font-weight: 700;
+  font-size: 10px;
+  line-height: normal;
+  text-transform: capitalize;
+  color: var(--ink);
+}
+
+/* ---------- Top Hiring Sectors ---------- */
+.sectors__title {
+  position: absolute;
+  left: 382px; top: 701px;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 20px;
+  line-height: normal;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.sectors__list { list-style: none; }
+/* li box starts at the arrow's x and the text's y; the arrow is offset back to its own y */
+.sectors__list li {
+  position: absolute;
+  left: 387px;
+  top: calc(var(--ay) + var(--ty));
+  padding-left: var(--tx, 22px);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: normal;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.arrow {
+  position: absolute;
+  left: 0;
+  top: calc(-1 * var(--ty));
+  width: 9.504px; height: 9px;
+}
+.arrow img {
+  position: absolute;
+  left: -1.792px; top: -1.02px;
+  width: 13.84px; height: 11.04px;
+  transform: rotate(-43.44deg);
+  transform-origin: 6.5445px 5.52px;
+}
+
+/* ---------- CTA ---------- */
+.cohort {
+  position: absolute;
+  left: 47px; top: 934px;
+  width: 247px;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 26px;
+  line-height: normal;
+  color: var(--white);
+}
+
+.closing {
+  position: absolute;
+  left: 53px; top: 1006px;
+  width: 260px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: normal;
+  text-transform: capitalize;
+  color: var(--white);
+}
+
+.apply {
+  position: absolute;
+  left: 47px; top: 1063px;
+  width: 133px; height: 39px;
+  background: #000;
+  border: 0.962px solid var(--border-muted);
+  border-radius: 50.036px;
+  text-decoration: none;
+  transition: border-color .2s ease;
+}
+.apply:hover, .apply:focus-visible { border-color: var(--pink); outline: none; }
+.apply__glow, .apply__pill {
+  position: absolute;
+  left: 5.04px; top: 5.04px;
+  width: 88px; height: 28px;
+  border-radius: 50.036px;
+}
+.apply__glow {
+  background-image: var(--grad-glow);
+  filter: blur(40.594px);
+  opacity: .8;
+}
+.apply__pill {
+  background-image: var(--grad-pill);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 4px;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: normal;
+  color: var(--white);
+  white-space: nowrap;
+  transition: filter .2s ease;
+}
+.apply:hover .apply__pill { filter: brightness(1.08); }
+.apply__arrow {
+  position: absolute;
+  left: 103.04px; top: 11.68px;
+  width: 16px; height: 14.72px;
+  transition: transform .2s ease;
+}
+.apply:hover .apply__arrow { transform: translateX(3px); }
